@@ -25,7 +25,7 @@ function setup() {
   gridWidth = width*.5;
   gridHeight = height *.65
   verticalLines = 27;
-  horizontalLines = verticalLines * 6;
+  horizontalLines = verticalLines * 7;
   dotDistance =  width*.0225;
 
   
