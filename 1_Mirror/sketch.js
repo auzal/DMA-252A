@@ -88,11 +88,11 @@ function draw() {
     // start point in x
     let xStart = -gridWidth/2 - offset;
     xStart -= noise((y+height) * noiseScale) * offset * 1.2;
-    xStart += random(-offset * .05, offset * .05);
+   // xStart += random(-offset * .05, offset * .05);
     // end point in x
     let xEnd = gridWidth/2 + offset;
     xEnd += noise((y+(height*2))  * noiseScale) * offset * 1.2;
-    xEnd += random(-offset * .05, offset * .05);
+   // xEnd += random(-offset * .05, offset * .05);
 
     line( xStart, y,  xEnd , y);
     
