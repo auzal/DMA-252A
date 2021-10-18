@@ -27,6 +27,8 @@ let cursorColorA;
 let cursorColorB;
 let defaultColors = true;
 
+let lastMouseMovement = 0;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   backgroundTexture = createGraphics(width, height);
@@ -37,6 +39,8 @@ function setup() {
   brushScaleFactors.push(1);
   brushScaleFactors.push(2.6);
   brushScaleFactors.push(4.6);
+
+  //noCursor();
 
 }
 
@@ -63,6 +67,17 @@ function draw() {
     pop();
   }
 
+  if(millis() - lastMouseMovement > 1500){
+    renderGuide = false;
+  }
+
+}
+
+function mouseMoved(){
+  lastMouseMovement = millis();
+  if(!mouseIsPressed){
+    renderGuide = true;
+  }
 }
 
 function mousePressed(){
@@ -72,6 +87,7 @@ function mousePressed(){
 }
 
 function mouseDragged(){
+  renderGuide = false;
   road.attemptNewVertex();
 }
 
