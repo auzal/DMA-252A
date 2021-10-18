@@ -133,6 +133,8 @@ function keyPressed(){
       eraseDrawing();
     }else if(key === 'X' || key === 'x'){
       invertColors();  
+    }else if(key === 's' || key === 'S'){
+      saveCanvas("roadscape");  
     }
   }
 
