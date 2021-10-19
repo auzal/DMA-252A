@@ -107,32 +107,39 @@ function keyPressed(){
       brushIndex = brushIndex % brushCount;
       print("CURRENT BRUSH: " + brushIndex);
       renderGuide = true;
+      lastMouseMovement = millis();
     }else if(key == '1'){
       brushIndex = 0
       print("CURRENT BRUSH: " + brushIndex);
       renderGuide = true;
+      lastMouseMovement = millis();
     }else if(key == '2'){
       brushIndex = 1
       print("CURRENT BRUSH: " + brushIndex);
       renderGuide = true;
+      lastMouseMovement = millis();
     }else if(key == '3'){
       brushIndex = 2
       print("CURRENT BRUSH: " + brushIndex);
+      lastMouseMovement = millis();
       renderGuide = true;
     }else if(keyCode === UP_ARROW){
       roadWidth += 5;
       renderGuide = true;
       roadWidth = constrain(roadWidth, minRoadWidth, maxRoadWidth);
+      lastMouseMovement = millis();
       print("CURRENT WIDTH: " + roadWidth);
     }else if(keyCode === DOWN_ARROW){
       roadWidth += -5;
       roadWidth = constrain(roadWidth, minRoadWidth, maxRoadWidth);
       renderGuide = true;
+      lastMouseMovement = millis();
       print("CURRENT WIDTH: " + roadWidth);
     }else if(keyCode === BACKSPACE){
       eraseDrawing();
     }else if(key === 'X' || key === 'x'){
       invertColors();  
+      lastMouseMovement = millis();
     }else if(key === 's' || key === 'S'){
       saveCanvas("roadscape");  
     }
