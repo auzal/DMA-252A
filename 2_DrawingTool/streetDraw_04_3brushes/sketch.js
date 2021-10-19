@@ -1,3 +1,12 @@
+// Road drawing tool
+// drag the mouse around to draw a road
+// B or 1, 2, 3, changes the brush
+// UP or DOWN changes size
+// S saves the current drawing as a .png
+// BACKSPACE erases the current drawing
+// X switches colors
+
+// Some math notes
 
 // https://stackoverflow.com/questions/1109536/an-algorithm-for-inflating-deflating-offsetting-buffering-polygons
 // http://fcacciola.50webs.com/Offseting%20Methods.htm
