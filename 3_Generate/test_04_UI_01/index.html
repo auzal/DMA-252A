@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.easycam.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="house.js"></script>
+    <script src="wall.js"></script>
+    <script src="window.js"></script>
+    <script src="smoke.js"></script>
+
+  </head>
+
+  <body>
+    <div class="controls">
+      <div class="control">
+        width:
+        <input id="width-slider" type="range" min="100" max="350">
+      </div>
+      <div class="control">
+        depth:
+        <input id="depth-slider" type="range" min="100" max="350">
+      </div>
+      <div class="control">
+        height:
+        <input id="height-slider" type="range" min="120" max="350">
+      </div>
+      <div class="control">
+        roof angle:
+        <input id="roof-slider" type="range" min="0" max="18">
+      </div>
+      <div class="control">
+        window coverage:
+        <input id="window-slider" type="range" min="10" max="100">
+      </div>
+      <div class="control">
+        <button id="randomize-button">randomize</button>
+      </div>
+      <div class="control">
+        <button id="night-button">night</button>
+      </div>
+      <div class="info">
+        Agent Count: <span id="count-display">1</span>
+      </div>
+    </div>
+
+    <script src="sketch.js"></script>
+  </body>
+</html>
