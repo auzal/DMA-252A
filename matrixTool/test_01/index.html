@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="action.js"></script>
+    <script src="uistuff.js"></script>
+  </head>
+
+  <body>
+    <div id="sketch"></div>
+    <div class="control-panel">
+      <hr>     
+      <b>translate()</b><br>
+      <div class="control">
+        <label>x coordinate:</label><br>
+        <input type="text" id="x-translate-value" value="0"><br>
+      </div>
+      <div class="control">
+        <label>y coordinate:</label><br>
+        <input type="text" id="y-translate-value" value="0"><br>
+      </div>
+      <div class="control">
+        <button id="translate-button">apply translation</button>
+      </div>
+      <hr>     
+      <b>rotate()</b><br>
+      <div class="control">
+        <label>degrees:</label><br>
+        <input type="text" id="rotate-value" value="0"><br>
+      </div>
+      <div class="control">
+        <button id="rotate-button">apply rotation</button>
+      </div>   
+      <hr>     
+      <b>rect()</b><br>
+      <div class="control">
+        <label>x coordinate:</label><br>
+        <input type="text" id="x-rect-value" value="0"><br>
+      </div>
+      <div class="control">
+        <label>y coordinate:</label><br>
+        <input type="text" id="y-rect-value" value="0"><br>
+      </div>
+      <div class="control">
+        <button id="rect-button">add rectangle</button>
+      </div>
+      <hr>
+      <div class="control">
+        <button id="delete-button">delete last</button>
+      </div>
+      <div class="control">
+        <button id="clear-button">delete all</button>
+      </div>
+      <hr>
+     <!-- <div class="control">
+        <labelm>test:</label>
+        <input id="test-box" type="checkbox" checked>
+      </div> -->
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

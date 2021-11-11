@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+canvas {
+  display: block;
+}
+
+.control-panel {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  border: 1px solid black;
+  background: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: black;
+  color: white;
+}
+
+label {
+  padding: 5px;
+}
