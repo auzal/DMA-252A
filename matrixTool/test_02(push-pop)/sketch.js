@@ -167,6 +167,14 @@ function applyActions(){
         strokeWeight(2);
         rect(action.x, action.y, action.size, action.size);
         pop();
+      }else if(action.type === "push"){
+        if(action.active){
+          push();
+        }
+      }else if(action.type === "pop"){
+        if(action.active){
+          pop();
+        }
       }
     }
   }

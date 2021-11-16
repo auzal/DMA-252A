@@ -10,6 +10,7 @@ class Action{
         this.yRender = 0;
         this.size = 20;
         this.margin;
+        this.active = true;
         if(this.type === "translate"){
             this.text = type + "(" + this.x + ", " + this.y + ");";
             console.log("added: " + this.text);
@@ -22,7 +23,16 @@ class Action{
         }else if(this.type === "initial"){
             this.text = type + " state";
             console.log("added: " + this.text);
+        }else if(this.type === "push"){
+            this.text = type + "();";
+            console.log("added: " + this.text);
+            this.active = false;
+        }else if(this.type === "pop"){
+            this.text = type + "();";
+            console.log("added: " + this.text);
+            this.active = false;
         }
+        
 
         push();
         textFont(font);
@@ -52,6 +62,10 @@ class Action{
         textFont(font);
         textSize(fontSize);
         text(this.text,0,-this.h*0.1);
+        if(!this.active){
+            stroke(255,0,0,255*opacity);
+            line(-this.w/2, 0, this.w/2, 0);
+        }
         pop();
         // stroke(255,0,0);
         // line(0,this.yRender, this.w, this.yRender);

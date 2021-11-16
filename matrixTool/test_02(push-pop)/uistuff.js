@@ -15,6 +15,9 @@ let clearButton;
 let textCheckbox;
 let textCheckboxState;
 
+let pushButton;
+let popButton;
+
 function linkUi(){
     translateXText = document.getElementById('x-translate-value');
     translateYText = document.getElementById('y-translate-value');
@@ -35,6 +38,12 @@ function linkUi(){
 
     clearButton = document.getElementById('clear-button');
     clearButton.addEventListener('click', onClear);
+
+    pushButton = document.getElementById('push-button');
+    pushButton.addEventListener('click', onPush);
+
+    popButton = document.getElementById('pop-button');
+    popButton.addEventListener('click', onPop);
 
   //  textCheckbox = document.getElementById('test-box');
 }
@@ -93,6 +102,16 @@ function onClear(){
 
 }
 
+function onPush(){
+    console.log("push");
+    addPush();
+}
+
+function onPop(){
+    addPop();
+    console.log("pop");
+}
+
 function updateCheckBoxes(){
     
     if(textCheckbox.checked != textCheckboxState){
@@ -141,6 +160,20 @@ function addRectangle(x,y){
     rectXText.value = "0";
     rectYText.value = "0";
     
+}
+
+function addPush(){
+    let aux = new Action("push", 0, 0);
+    aux.setPosition(xAcum,yAcum);
+    actions.push(aux);
+    updateYAcum();
+}
+
+function addPop(){
+    let aux = new Action("pop", 0, 0);
+    aux.setPosition(xAcum,yAcum);
+    actions.push(aux);
+    updateYAcum();
 }
 
 function updateYAcum(){
