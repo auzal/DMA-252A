@@ -27,6 +27,7 @@ function setup() {
 
 function draw() {
   checkActionsHover();
+  checkPushPop();
  // updateCheckBoxes();
   background(248, 238, 203);
   push();
@@ -194,4 +195,38 @@ function checkActionsHover(){
     actionsIndex = actions.length-1;
   }
  // console.log(actionsIndex);
+}
+
+
+function checkPushPop(){
+  let firstPush = -1;
+
+  //let pushIndexes = [];
+
+  for(let i = 0 ; i < actions.length ; i ++){
+    if(actions[i].type === 'push'){
+   //   pushIndexes.push[i];
+      actions[i].active = false;
+    }else if(actions[i].type === 'pop'){
+      actions[i].active = false;
+    }
+
+  }
+
+  for(let i = 0 ; i <= actionsIndex ; i ++){
+    if(actions[i].type === 'pop'){
+      if(i>1){ // 0 is always initial state
+        for(let j = i ; j >= 0 ; j-- ){
+          if(actions[j].type === 'push' && !actions[j].active){
+            actions[i].active = true; // activate pop
+            actions[j].active = true; // activate push
+            actions[j].pair = createVector(actions[i].xRender, actions[i].yRender);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
 }

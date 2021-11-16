@@ -11,6 +11,7 @@ class Action{
         this.size = 20;
         this.margin;
         this.active = true;
+        
         if(this.type === "translate"){
             this.text = type + "(" + this.x + ", " + this.y + ");";
             console.log("added: " + this.text);
@@ -43,6 +44,9 @@ class Action{
         this.w += this.margin*2;
        // this.h += this.margin*2;
         pop();
+
+        this.pair = createVector(0,0);
+        this.connectionOffset = random(this.w * 2.5, this.w * 3.5);
     }
 
     setPosition(x,y){
@@ -67,6 +71,17 @@ class Action{
             line(-this.w/2, 0, this.w/2, 0);
         }
         pop();
+
+        if(this.type === 'push' && this.active){
+            push();
+            translate(this.w/2, this.h/2);
+            stroke(255);
+            line(this.xRender + this.connectionOffset, this.yRender, this.pair.x + this.connectionOffset, this.pair.y);
+            line(this.xRender + this.w/2 + 5, this.yRender, this.xRender + this.connectionOffset, this.yRender);
+            line(this.pair.x + this.w/2, this.pair.y, this.pair.x + this.connectionOffset, this.pair.y);
+            //console.log(this.pair.x);
+            pop();
+        }
         // stroke(255,0,0);
         // line(0,this.yRender, this.w, this.yRender);
         // line(0,this.yRender + this.h, this.w, this.yRender + this.h);
