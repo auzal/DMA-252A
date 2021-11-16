@@ -207,6 +207,7 @@ function checkPushPop(){
     if(actions[i].type === 'push'){
    //   pushIndexes.push[i];
       actions[i].active = false;
+      actions[i].connectionOffset = 0;
     }else if(actions[i].type === 'pop'){
       actions[i].active = false;
     }
@@ -220,9 +221,21 @@ function checkPushPop(){
           if(actions[j].type === 'push' && !actions[j].active){
             actions[i].active = true; // activate pop
             actions[j].active = true; // activate push
-            actions[j].pair = createVector(actions[i].xRender, actions[i].yRender);
+            actions[j].pairPosition = createVector(actions[i].xRender, actions[i].yRender);
+            actions[j].pairIndex = i;
             break;
           }
+        }
+      }
+    }
+
+  }
+
+  for(let i = 0 ; i < actions.length ; i ++){
+    if(actions[i].type === 'push' && actions[i].active){
+      for(let j = i+1 ; j < actions[i].pairIndex ; j++){
+        if(actions[j].type === 'push' && actions[j].active){
+          actions[i].connectionOffset += 10;
         }
       }
     }

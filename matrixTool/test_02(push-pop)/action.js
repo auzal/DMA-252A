@@ -34,7 +34,6 @@ class Action{
             this.active = false;
         }
         
-
         push();
         textFont(font);
         textSize(fontSize);
@@ -45,8 +44,10 @@ class Action{
        // this.h += this.margin*2;
         pop();
 
-        this.pair = createVector(0,0);
-        this.connectionOffset = random(this.w * 2.5, this.w * 3.5);
+        this.pairIndex = 0;
+        this.pairPosition = createVector(0,0);
+        this.connectionOffset = 0;
+        this.connectionX = this.w * 2.2;
     }
 
     setPosition(x,y){
@@ -76,9 +77,9 @@ class Action{
             push();
             translate(this.w/2, this.h/2);
             stroke(255);
-            line(this.xRender + this.connectionOffset, this.yRender, this.pair.x + this.connectionOffset, this.pair.y);
-            line(this.xRender + this.w/2 + 5, this.yRender, this.xRender + this.connectionOffset, this.yRender);
-            line(this.pair.x + this.w/2, this.pair.y, this.pair.x + this.connectionOffset, this.pair.y);
+            line(this.xRender + this.connectionX +  this.connectionOffset , this.yRender, this.pairPosition.x + this.connectionX + this.connectionOffset, this.pairPosition.y);
+            line(this.xRender + this.w/2 + 5, this.yRender, this.xRender + this.connectionX + this.connectionOffset, this.yRender);
+            line(this.pairPosition.x + this.w/2, this.pairPosition.y, this.pairPosition.x + this.connectionX + this.connectionOffset, this.pairPosition.y);
             //console.log(this.pair.x);
             pop();
         }
