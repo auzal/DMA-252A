@@ -29,7 +29,7 @@ function draw() {
   checkActionsHover();
   checkPushPop();
  // updateCheckBoxes();
-  background(248, 238, 203);
+  background(200);
   push();
   translate(width/2, height/2);
   translate(-areaWidth/2, -areaHeight/2);
