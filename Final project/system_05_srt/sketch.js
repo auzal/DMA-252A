@@ -26,7 +26,7 @@ function setup() {
   stainTexture = createGraphics(width, height);
   bg = color(0);
   stainTexture.background(bg);
-  img.resize(0, height);
+  img.resize(width * .7, 0 );
   blurShader.init();
   soundManager.init();
   timeline.init(soundManager.soundFile.duration());

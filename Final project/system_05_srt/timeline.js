@@ -46,7 +46,7 @@ class Timeline{
         textAlign(CENTER);
         rectMode(CENTER);
         translate(width/2, height);
-        text(t, 0, 0, width/3, height*.3);
+        text(t, 0, 0, width*.5, height*.3);
         pop();
     }
 

@@ -14,7 +14,7 @@ class Stain {
     this.x_displace = random(-500, 500);;
     this.y_displace = random(-500, 500);;
     let min = map(control, 0, 1, 3, 20);
-    let max = map(control, 0, 1, 20, 65);
+    let max = map(control, 0, 1, 17, 65);
     this.life = random(min,max);
   //  this.life = random(15,30);;
     let a = color(230, 128, 74, 5);

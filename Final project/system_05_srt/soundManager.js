@@ -64,7 +64,7 @@ class SoundManager{
         this.soundFile.setVolume(vol);
 
         let reverbNoise = noise(frameCount*0.05);                                                       // HARD CODED !!!!!!!!!
-        this.reverbWetDry = map(reverbNoise, 0, 1, 0.4, 0.9) * control;                                 // HARD CODED !!!!!!!!!
+        this.reverbWetDry = map(reverbNoise, 0, 1, 0.2, 0.4) * map(control,0,1,0.3,1);                                 // HARD CODED !!!!!!!!!
         this.reverbWetDry = constrain(this.reverbWetDry, 0, 1);
         // 1 = all reverb, 0 = no reverb
         this.reverb.drywet(this.reverbWetDry);
@@ -73,7 +73,7 @@ class SoundManager{
       //  this.reverb.drywet(0);
 
         // set the BandPass frequency based on mouseX
-        let frequencyNoise = noise(0,frameCount*0.2); 
+        let frequencyNoise = noise(0,frameCount*0.1); 
         this.filterFrequency = map(frequencyNoise, 0, 1,80/2, 300*2);                                       // HARD CODED !!!!!!!!!
         this.filterFrequency = constrain(this.filterFrequency, 0, 22050);   
         this.filter.freq(this.filterFrequency);
@@ -85,7 +85,7 @@ class SoundManager{
     startFilePlayback(){
         if(!this.soundFile.isPlaying()){
             this.soundFile.play();
-            this.soundFile.setLoop(true);
+            //this.soundFile.setLoop(true);
             this.amplitude = new p5.Amplitude();
             this.amplitude.setInput(this.soundFile);
         }
