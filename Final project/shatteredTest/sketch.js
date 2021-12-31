@@ -46,6 +46,17 @@ function draw() {
  //shapes[index].renderDebug(1);
   pop();
   renderDebugInfo();
+
+
+  texture(img);
+  beginShape();
+  vertex(0,0,0,0);
+  vertex(100,0,img.width,0);
+  vertex(100,100,img.width,img.height);
+  vertex(0,100,0,img.height);
+
+  endShape();
+
 }
 
 function parseShapes(data){

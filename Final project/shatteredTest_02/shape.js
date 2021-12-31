@@ -97,6 +97,7 @@ class Shape{
             let x = this.vertices[i].x* scale +  (noise((frameCount/2 + this.x*10)*noiseScale)*displace);
             let y = this.vertices[i].y*scale + (noise((frameCount/2 + this.y*10)*noiseScale)*displace);
             vertex(x, y, tX, tY);
+            console.log(tX);
         }
         endShape(CLOSE);
         pop();
